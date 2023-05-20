@@ -1,0 +1,17 @@
+[
+  {
+    "name": "Erin Engler",
+    "email": "erinengler@test.com",
+    "password": "testPassword"
+  },
+  {
+    "name": "Jeremy Engler",
+    "email": "jengler@test.com",
+    "password": "testPassword"
+  },
+  {
+    "name": "Kendra Engler",
+    "email": "kengler@test.com",
+    "password": "testPassword"
+  }
+]

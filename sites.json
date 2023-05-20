@@ -1,0 +1,34 @@
+[
+  {
+    "name": "Luxurious Mountain Lodge",
+    "location": "Fairview, UT",
+    "website": "https://www.vrbo.com/939399ha",
+    "price": "1329",
+    "pool": false,
+    "sqFoot": "10800",
+    "bedrooms": "10",
+    "distance": "12 hrs from Tucson",
+    "notes": "Must stay 4 nights"
+  },
+  {
+    "name": "Lodges at Pheasant Run",
+    "location": "Fayette, UT",
+    "website": "https://www.airbnb.com/rooms/17098316",
+    "price": "1200",
+    "pool": true,
+    "sqFoot": "Entire ranch, cabins",
+    "bedrooms": "13",
+    "distance": "11 1/2 hrs from Tucson",
+    "notes": "Food provided for extra charge"
+  },
+  {
+    "name": "Aspen Creek Lodge",
+    "location": "Heber City, UT",
+    "website": "https://www.vrbo.com/752391",
+    "price": "2595",
+    "pool": true,
+    "sqFoot": "6000",
+    "bedrooms": "9",
+    "distance": "13 hrs from Tucson"
+  }
+]
