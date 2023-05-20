@@ -20,9 +20,10 @@ content-type: application/json
 
 {
   "name": "Paige",
-  "email": "p@test.com",
-  "password": "test",
+  "email": "Test",
+  "password": "Test"
 }
+
 
 
 ###
@@ -74,9 +75,10 @@ content-type: application/json
 
 {
   "name": "Paige",
-  "email": "p@test.com",
-  "password": "test",
+  "email": "Test",
+  "password": "Test"
 }
+
 
 
 ###

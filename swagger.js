@@ -6,7 +6,7 @@ const doc = {
     description: 'Reunion Sites API',
   },
   host: 'https://cse341-project2-2uol.onrender.com',
-  schemes: ['http'],
+  schemes: ['https', 'http'],
 };
 
 const outputFile = './swagger.json';
