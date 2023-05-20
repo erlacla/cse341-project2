@@ -5,7 +5,7 @@ const doc = {
     title: 'Reunion API',
     description: 'Reunion Sites API',
   },
-  host: 'https://cse341-project2-2uol.onrender.com',
+  host: 'cse341-project2-2uol.onrender.com',
   schemes: ['https', 'http'],
 };
 
