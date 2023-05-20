@@ -5,11 +5,9 @@
     "description": "Reunion Sites API",
     "version": "1.0.0"
   },
-  "host": "localhost:8080",
+  "host": "https://cse341-project2-2uol.onrender.com",
   "basePath": "/",
-  "schemes": [
-    "http"
-  ],
+  "schemes": ["https", "http"],
   "paths": {
     "/api-docs": {
       "get": {
@@ -21,9 +19,7 @@
     "/user/": {
       "get": {
         "description": "",
-        "produces": [
-          "application/json"
-        ],
+        "produces": ["application/json"],
         "parameters": [],
         "responses": {
           "200": {
@@ -35,9 +31,7 @@
     "/user/{id}": {
       "get": {
         "description": "",
-        "produces": [
-          "application/json"
-        ],
+        "produces": ["application/json"],
         "parameters": [
           {
             "name": "id",
@@ -89,9 +83,7 @@
     "/sites/": {
       "get": {
         "description": "",
-        "produces": [
-          "application/json"
-        ],
+        "produces": ["application/json"],
         "parameters": [],
         "responses": {
           "200": {
@@ -103,9 +95,7 @@
     "/sites/{id}": {
       "get": {
         "description": "",
-        "produces": [
-          "application/json"
-        ],
+        "produces": ["application/json"],
         "parameters": [
           {
             "name": "id",

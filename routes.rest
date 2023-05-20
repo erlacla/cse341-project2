@@ -1,0 +1,109 @@
+//LOCALHOST
+GET http://localhost:8080/api-docs 
+###
+GET http://localhost:8080/user
+
+###
+GET http://localhost:8080/user/6465ad943e102bf2fc04ec1e
+###
+
+GET http://localhost:8080/user/6465ad943e102bf2fc04ec1f
+###
+
+GET http://localhost:8080/user/6465ad943e102bf2fc04ec20
+
+
+
+###
+POST http://localhost:8080/user/new HTTP/1.1
+content-type: application/json
+
+{
+  "name": "Paige",
+  "email": "p@test.com",
+  "password": "test",
+}
+
+
+###
+GET http://localhost:8080/sites/
+
+###
+GET http://localhost:8080/sites/6465b4be3e102bf2fc04ec22
+
+###
+GET http://localhost:8080/sites/6465b4be3e102bf2fc04ec23
+
+###
+GET http://localhost:8080/sites/6465b4be3e102bf2fc04ec24
+
+
+
+###
+POST http://localhost:8080/sites/new HTTP/1.1
+content-type: application/json
+
+{
+  "name": "Test Lodge",
+  "location": "Test",
+  "website": "Test",
+  "price": "Test",
+  "pool": true,
+  "sqFoot": "Test",
+  "bedrooms": "Test",
+  "distance": "Test"
+}
+
+
+//PRODUCTION
+###
+GET https://cse341-project2-2uol.onrender.com/api-docs
+###
+GET https://cse341-project2-2uol.onrender.com/user
+###
+GET https://cse341-project2-2uol.onrender.com/user/6465ad943e102bf2fc04ec1e
+###
+GET https://cse341-project2-2uol.onrender.com/user/6465ad943e102bf2fc04ec1f
+###
+GET https://cse341-project2-2uol.onrender.com/user/6465ad943e102bf2fc04ec20
+
+
+###
+POST https://cse341-project2-2uol.onrender.com/user/new HTTP/1.1
+content-type: application/json
+
+{
+  "name": "Paige",
+  "email": "p@test.com",
+  "password": "test",
+}
+
+
+###
+GET https://cse341-project2-2uol.onrender.com/sites/
+
+###
+GET https://cse341-project2-2uol.onrender.com/sites/6465b4be3e102bf2fc04ec22
+
+###
+GET https://cse341-project2-2uol.onrender.com/sites/6465b4be3e102bf2fc04ec23
+
+###
+GET https://cse341-project2-2uol.onrender.com/sites/6465b4be3e102bf2fc04ec24
+
+
+
+###
+POST https://cse341-project2-2uol.onrender.com/sites/new HTTP/1.1
+content-type: application/json
+
+{
+  "name": "Test Lodge",
+  "location": "Test",
+  "website": "Test",
+  "price": "Test",
+  "pool": true,
+  "sqFoot": "Test",
+  "bedrooms": "Test",
+  "distance": "Test"
+}
