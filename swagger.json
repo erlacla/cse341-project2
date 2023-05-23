@@ -297,7 +297,7 @@
     "/sites/delete": {
       "delete": {
         "tags": ["site"],
-        "summary": "Delete sites",
+        "summary": "Delete site",
         "description": "This is for deleting a site.",
         "parameters": [],
         "responses": {
