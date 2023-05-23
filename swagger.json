@@ -9,26 +9,34 @@
   "basePath": "/",
   "tags": [
     {
+      "name": "swagger",
+      "description": "See API documentation"
+    },
+    {
       "name": "user",
-      "description": "Operations about users"
+      "description": "Operations for users"
     },
     {
       "name": "site",
-      "description": "Operations about sites"
+      "description": "Operations for sites"
     }
   ],
   "schemes": ["https", "http"],
   "paths": {
     "/api-docs": {
       "get": {
-        "description": "",
+        "tags": ["swagger"],
+        "summary": "Get swagger",
+        "description": "Get the API documentation.",
         "parameters": [],
         "responses": {}
       }
     },
     "/user/": {
       "get": {
-        "description": "",
+        "tags": ["user"],
+        "summary": "Get users",
+        "description": "This is for getting all users.",
         "produces": ["application/json"],
         "parameters": [],
         "responses": {
@@ -96,7 +104,9 @@
     },
     "/user/update": {
       "put": {
-        "description": "",
+        "tags": ["user"],
+        "summary": "Update user",
+        "description": "This is for updating a user.",
         "parameters": [
           {
             "name": "body",
@@ -129,7 +139,9 @@
     },
     "/user/delete": {
       "delete": {
-        "description": "",
+        "tags": ["user"],
+        "summary": "Delete user",
+        "description": "This is for deleting a user.",
         "parameters": [],
         "responses": {
           "204": {
@@ -143,7 +155,9 @@
     },
     "/sites/": {
       "get": {
-        "description": "",
+        "tags": ["site"],
+        "summary": "Get sites",
+        "description": "This is for getting all reunion sites.",
         "produces": ["application/json"],
         "parameters": [],
         "responses": {
@@ -155,7 +169,9 @@
     },
     "/sites/{id}": {
       "get": {
-        "description": "",
+        "tags": ["site"],
+        "summary": "Get a site",
+        "description": "This is for getting a specific site by id number.",
         "produces": ["application/json"],
         "parameters": [
           {
@@ -174,7 +190,9 @@
     },
     "/sites/new": {
       "post": {
-        "description": "",
+        "tags": ["site"],
+        "summary": "Create site",
+        "description": "This is for creating a new reunion site.",
         "parameters": [
           {
             "name": "body",
@@ -225,7 +243,9 @@
     },
     "/sites/update": {
       "put": {
-        "description": "",
+        "tags": ["site"],
+        "summary": "Update site",
+        "description": "This is for updating a site.",
         "parameters": [
           {
             "name": "body",
@@ -276,7 +296,9 @@
     },
     "/sites/delete": {
       "delete": {
-        "description": "",
+        "tags": ["site"],
+        "summary": "Delete sites",
+        "description": "This is for deleting a site.",
         "parameters": [],
         "responses": {
           "204": {
