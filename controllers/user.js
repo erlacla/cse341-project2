@@ -23,7 +23,7 @@ const getSingle = async (req, res) => {
 };
 
 const createUser = async (req, res) => {
-  const contact = {
+  const user = {
     name: req.body.name,
     email: req.body.email,
     password: req.body.password,
@@ -32,7 +32,7 @@ const createUser = async (req, res) => {
     .getDb()
     .db()
     .collection('user')
-    .insertOne(contact);
+    .insertOne(user);
   if (response.acknowledged) {
     res.status(201).json(response);
   } else {
@@ -42,4 +42,43 @@ const createUser = async (req, res) => {
   }
 };
 
-module.exports = { getUsers, getSingle, createUser };
+const updateUser = async (req, res) => {
+  const userId = new ObjectId(req.params.id);
+  const user = {
+    name: req.body.name,
+    email: req.body.email,
+    password: req.body.password,
+  };
+  const response = await mongodb
+    .getDb()
+    .db()
+    .collection('user')
+    .replaceOne({ _id: userId }, user);
+  console.log(response);
+  if (response.modifiedCount > 0) {
+    res.status(204).send();
+  } else {
+    res
+      .status(500)
+      .json(response.error || 'An error occurred when updating the user.');
+  }
+};
+
+const deleteUser = async (req, res) => {
+  const userId = new ObjectId(req.params.id);
+  const response = await mongodb
+    .getDb()
+    .db()
+    .collection('user')
+    .deleteOne({ _id: userId }, true);
+  console.log(response);
+  if (response.deletedCount > 0) {
+    res.status(204).send();
+  } else {
+    res
+      .status(500)
+      .json(response.error || 'An error occurred when deleting the user.');
+  }
+};
+
+module.exports = { getUsers, getSingle, createUser, updateUser, deleteUser };
