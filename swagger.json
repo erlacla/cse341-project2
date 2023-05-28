@@ -21,7 +21,7 @@
       "description": "Operations for sites"
     }
   ],
-  "schemes": ["https", "http"],
+  "schemes": ["https"],
   "paths": {
     "/api-docs": {
       "get": {
@@ -42,6 +42,9 @@
         "responses": {
           "200": {
             "description": "OK"
+          },
+          "500": {
+            "description": "Internal Server Error"
           }
         }
       }
@@ -63,6 +66,78 @@
         "responses": {
           "200": {
             "description": "OK"
+          },
+          "400": {
+            "description": "Bad Request"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      },
+      "put": {
+        "tags": ["user"],
+        "summary": "Update user",
+        "description": "This is for updating a specific user by id number.",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "body",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "name": {
+                  "example": "any"
+                },
+                "email": {
+                  "example": "any"
+                },
+                "password": {
+                  "example": "any"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "No Content"
+          },
+          "412": {
+            "description": "Precondition Failed"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      },
+      "delete": {
+        "tags": ["user"],
+        "summary": "Delete user",
+        "description": "This is for deleting a specific user by id number.",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "No Content"
+          },
+          "400": {
+            "description": "Bad Request"
+          },
+          "500": {
+            "description": "Internal Server Error"
           }
         }
       }
@@ -96,56 +171,8 @@
           "201": {
             "description": "Created"
           },
-          "500": {
-            "description": "Internal Server Error"
-          }
-        }
-      }
-    },
-    "/user/update": {
-      "put": {
-        "tags": ["user"],
-        "summary": "Update user",
-        "description": "This is for updating a user.",
-        "parameters": [
-          {
-            "name": "body",
-            "in": "body",
-            "schema": {
-              "type": "object",
-              "properties": {
-                "name": {
-                  "example": "any"
-                },
-                "email": {
-                  "example": "any"
-                },
-                "password": {
-                  "example": "any"
-                }
-              }
-            }
-          }
-        ],
-        "responses": {
-          "204": {
-            "description": "No Content"
-          },
-          "500": {
-            "description": "Internal Server Error"
-          }
-        }
-      }
-    },
-    "/user/delete": {
-      "delete": {
-        "tags": ["user"],
-        "summary": "Delete user",
-        "description": "This is for deleting a user.",
-        "parameters": [],
-        "responses": {
-          "204": {
-            "description": "No Content"
+          "412": {
+            "description": "Precondition Failed"
           },
           "500": {
             "description": "Internal Server Error"
@@ -163,6 +190,9 @@
         "responses": {
           "200": {
             "description": "OK"
+          },
+          "500": {
+            "description": "Internal Server Error"
           }
         }
       }
@@ -184,6 +214,99 @@
         "responses": {
           "200": {
             "description": "OK"
+          },
+          "400": {
+            "description": "Bad Request"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      },
+      "put": {
+        "tags": ["site"],
+        "summary": "Update site",
+        "description": "This is for updating a site.",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "body",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "name": {
+                  "example": "any"
+                },
+                "location": {
+                  "example": "any"
+                },
+                "website": {
+                  "example": "any"
+                },
+                "price": {
+                  "example": "any"
+                },
+                "pool": {
+                  "example": "any"
+                },
+                "sqFoot": {
+                  "example": "any"
+                },
+                "bedrooms": {
+                  "example": "any"
+                },
+                "distance": {
+                  "example": "any"
+                },
+                "notes": {
+                  "example": "any"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "No Content"
+          },
+          "400": {
+            "description": "Bad Request"
+          },
+          "412": {
+            "description": "Precondition Failed"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      },
+      "delete": {
+        "tags": ["site"],
+        "summary": "Delete site",
+        "description": "This is for deleting a site.",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "No Content"
+          },
+          "400": {
+            "description": "Bad Request"
+          },
+          "500": {
+            "description": "Internal Server Error"
           }
         }
       }
@@ -235,74 +358,8 @@
           "201": {
             "description": "Created"
           },
-          "500": {
-            "description": "Internal Server Error"
-          }
-        }
-      }
-    },
-    "/sites/update": {
-      "put": {
-        "tags": ["site"],
-        "summary": "Update site",
-        "description": "This is for updating a site.",
-        "parameters": [
-          {
-            "name": "body",
-            "in": "body",
-            "schema": {
-              "type": "object",
-              "properties": {
-                "name": {
-                  "example": "any"
-                },
-                "location": {
-                  "example": "any"
-                },
-                "website": {
-                  "example": "any"
-                },
-                "price": {
-                  "example": "any"
-                },
-                "pool": {
-                  "example": "any"
-                },
-                "sqFoot": {
-                  "example": "any"
-                },
-                "bedrooms": {
-                  "example": "any"
-                },
-                "distance": {
-                  "example": "any"
-                },
-                "notes": {
-                  "example": "any"
-                }
-              }
-            }
-          }
-        ],
-        "responses": {
-          "204": {
-            "description": "No Content"
-          },
-          "500": {
-            "description": "Internal Server Error"
-          }
-        }
-      }
-    },
-    "/sites/delete": {
-      "delete": {
-        "tags": ["site"],
-        "summary": "Delete site",
-        "description": "This is for deleting a site.",
-        "parameters": [],
-        "responses": {
-          "204": {
-            "description": "No Content"
+          "412": {
+            "description": "Precondition Failed"
           },
           "500": {
             "description": "Internal Server Error"

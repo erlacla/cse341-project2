@@ -1,4 +1,7 @@
 //LOCALHOST
+/////////////////////////////////////////////////////////////////
+
+//USER
 GET http://localhost:8080/api-docs 
 ###
 GET http://localhost:8080/user
@@ -12,20 +15,33 @@ GET http://localhost:8080/user/6465ad943e102bf2fc04ec1f
 
 GET http://localhost:8080/user/6465ad943e102bf2fc04ec20
 
-
-
 ###
 POST http://localhost:8080/user/new HTTP/1.1
 content-type: application/json
 
 {
-  "name": "Paige",
-  "email": "Test",
-  "password": "Test"
+  "name": "Johnny",
+  "email": "Testm.com",
+  "password": "kjkh"
 }
 
+###
+PUT http://localhost:8080/user/64699a4b9038e420e2df0d52 HTTP/1.1
+content-type: application/json
+
+{
+  "name": "mango",
+  "email": "Test@6.com",
+  "password": "bearrrrrrrr"
+}
+
+###
+DELETE http://localhost:8080/user/647276f126b1ab3ba4abff90 HTTP/1.1
+content-type: application/json
 
 
+
+//SITES
 ###
 GET http://localhost:8080/sites/
 
@@ -38,8 +54,6 @@ GET http://localhost:8080/sites/6465b4be3e102bf2fc04ec23
 ###
 GET http://localhost:8080/sites/6465b4be3e102bf2fc04ec24
 
-
-
 ###
 POST http://localhost:8080/sites/new HTTP/1.1
 content-type: application/json
@@ -50,13 +64,38 @@ content-type: application/json
   "website": "Test",
   "price": "Test",
   "pool": true,
-  "sqFoot": "Test",
-  "bedrooms": "Test",
+  "sqFoot": "1111111",
+  "bedrooms": "22222",
   "distance": "Test"
 }
 
+###
+PUT http://localhost:8080/sites/64684903611a16beeb912f3e HTTP/1.1
+content-type: application/json
 
+{
+  "name": "Test Lodge",
+  "location": "Test",
+  "website": "Test",
+  "price": "Test",
+  "pool": true,
+  "sqFoot": "11",
+  "bedrooms": "11",
+  "distance": "einr"
+}
+
+###
+DELETE http://localhost:8080/sites/6472bf133820e9ddabb7cef1 HTTP/1.1
+content-type: application/json
+
+
+
+
+
+//////////////////////////////////////////////////////////////////
 //PRODUCTION
+
+//USER
 ###
 GET https://cse341-project2-2uol.onrender.com/api-docs
 ###
@@ -68,7 +107,6 @@ GET https://cse341-project2-2uol.onrender.com/user/6465ad943e102bf2fc04ec1f
 ###
 GET https://cse341-project2-2uol.onrender.com/user/6465ad943e102bf2fc04ec20
 
-
 ###
 POST https://cse341-project2-2uol.onrender.com/user/new HTTP/1.1
 content-type: application/json
@@ -79,8 +117,23 @@ content-type: application/json
   "password": "Test"
 }
 
+###
+PUT https://cse341-project2-2uol.onrender.com/user/64699a4b9038e420e2df0d52 HTTP/1.1
+content-type: application/json
+
+{
+  "name": "mango",
+  "email": "Test@6.com",
+  "password": "bearrrrrrrr"
+}
+
+###
+DELETE https://cse341-project2-2uol.onrender.com/user/647276f126b1ab3ba4abff90 HTTP/1.1
+content-type: application/json
 
 
+
+//SITES
 ###
 GET https://cse341-project2-2uol.onrender.com/sites/
 
@@ -92,8 +145,6 @@ GET https://cse341-project2-2uol.onrender.com/sites/6465b4be3e102bf2fc04ec23
 
 ###
 GET https://cse341-project2-2uol.onrender.com/sites/6465b4be3e102bf2fc04ec24
-
-
 
 ###
 POST https://cse341-project2-2uol.onrender.com/sites/new HTTP/1.1
@@ -109,3 +160,22 @@ content-type: application/json
   "bedrooms": "Test",
   "distance": "Test"
 }
+
+###
+PUT https://cse341-project2-2uol.onrender.com/sites/64684903611a16beeb912f3e HTTP/1.1
+content-type: application/json
+
+{
+  "name": "Test Lodge",
+  "location": "Test",
+  "website": "Test",
+  "price": "Test",
+  "pool": true,
+  "sqFoot": "11",
+  "bedrooms": "11",
+  "distance": "einr"
+}
+
+###
+DELETE https://cse341-project2-2uol.onrender.com/sites/6472bf133820e9ddabb7cef1 HTTP/1.1
+content-type: application/json

@@ -1,11 +1,3 @@
-// router.get('/user', (req, res) => {
-//   res
-//     .status(200)
-//     .json(
-//       (response = { reversed: req.query.name.split('').reverse().join('') })
-//     );
-// });
-
 const routes = require('express').Router();
 
 routes.use('/', require('./swagger'));
