@@ -107,7 +107,7 @@
         ],
         "responses": {
           "204": {
-            "description": "No Content"
+            "description": "Updated the User"
           },
           "412": {
             "description": "Precondition Failed"
@@ -131,7 +131,7 @@
         ],
         "responses": {
           "204": {
-            "description": "No Content"
+            "description": "Successfully Deleted User"
           },
           "400": {
             "description": "Bad Request"
@@ -169,7 +169,7 @@
         ],
         "responses": {
           "201": {
-            "description": "Created"
+            "description": "Created the User"
           },
           "412": {
             "description": "Precondition Failed"
@@ -273,7 +273,7 @@
         ],
         "responses": {
           "204": {
-            "description": "No Content"
+            "description": "Updated the Site"
           },
           "400": {
             "description": "Bad Request"
@@ -300,7 +300,7 @@
         ],
         "responses": {
           "204": {
-            "description": "No Content"
+            "description": "Successfully Ueleted Site"
           },
           "400": {
             "description": "Bad Request"
@@ -356,7 +356,7 @@
         ],
         "responses": {
           "201": {
-            "description": "Created"
+            "description": "Created New Site"
           },
           "412": {
             "description": "Precondition Failed"
