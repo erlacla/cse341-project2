@@ -130,7 +130,7 @@
           }
         ],
         "responses": {
-          "204": {
+          "200": {
             "description": "Successfully Deleted User"
           },
           "400": {
@@ -299,7 +299,7 @@
           }
         ],
         "responses": {
-          "204": {
+          "200": {
             "description": "Successfully Ueleted Site"
           },
           "400": {
