@@ -1,4 +1,5 @@
 const swaggerAutogen = require('swagger-autogen')();
+const env = require('dotenv').doc();
 
 const doc = {
   info: {
@@ -8,6 +9,7 @@ const doc = {
   //host: 'localhost:8080',
   host: 'cse341-project2-2uol.onrender.com',
   schemes: ['https'],
+  secret: process.env.SECRET,
 };
 
 const outputFile = './swagger.json';
