@@ -5,11 +5,11 @@ const doc = {
   info: {
     title: 'Reunion API',
     description: 'Reunion Sites API',
+    secret: process.env.SECRET,
   },
   //host: 'localhost:8080',
   host: 'cse341-project2-2uol.onrender.com',
   schemes: ['https'],
-  secret: process.env.SECRET,
 };
 
 const outputFile = './swagger.json';
