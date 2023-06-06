@@ -1,7 +1,7 @@
 const swaggerAutogen = require('swagger-autogen')();
-const env = require('dotenv').doc();
+require('dotenv').config();
 
-const secret = process.env.SECRET;
+// const secret = process.env.SECRET;
 
 const doc = {
   info: {
