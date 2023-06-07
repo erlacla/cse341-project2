@@ -179,3 +179,12 @@ content-type: application/json
 ###
 DELETE https://cse341-project2-2uol.onrender.com/sites/6472bf133820e9ddabb7cef1 HTTP/1.1
 content-type: application/json
+
+
+
+###
+GET https://cse341-project2-2uol.onrender.com/login
+
+###
+GET https://cse341-project2-2uol.onrender.com/logout
+
