@@ -5,7 +5,7 @@ const { requiresAuth } = require('express-openid-connect');
 require('dotenv').config();
 const port = process.env.PORT || 8080;
 const app = express();
-const bcrypt = require('bcrypt');
+
 const { auth } = require('express-openid-connect');
 
 const config = {

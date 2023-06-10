@@ -1,5 +1,6 @@
 const mongodb = require('../db/connect');
 const ObjectId = require('mongodb').ObjectId;
+const bcrypt = require('bcrypt');
 
 const getUsers = async (req, res) => {
   try {
