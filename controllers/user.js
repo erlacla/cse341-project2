@@ -62,30 +62,34 @@ const createUser = async (req, res) => {
 };
 
 const updateUser = async (req, res) => {
-  try {
-    const userId = new ObjectId(req.params.id);
-    const user = {
-      name: req.body.name,
-      email: req.body.email,
-      password: req.body.password,
-    };
-    const response = await mongodb
-      .getDb()
-      .db()
-      .collection('user')
-      .replaceOne({ _id: userId }, user);
-    console.log(response);
-    if (response.modifiedCount > 0) {
-      res.status(204).send();
-      console.log('user was successfully updated.');
-    } else {
-      res
-        .status(500)
-        .json(response.error || 'Some error occurred while updating the user.');
+  bcrypt.hash(req.body.password, salt, async function (err, hash) {
+    try {
+      const userId = new ObjectId(req.params.id);
+      const user = {
+        name: req.body.name,
+        email: req.body.email,
+        password: hash,
+      };
+      const response = await mongodb
+        .getDb()
+        .db()
+        .collection('user')
+        .replaceOne({ _id: userId }, user);
+      console.log(response);
+      if (response.modifiedCount > 0) {
+        res.status(204).send();
+        console.log('user was successfully updated.');
+      } else {
+        res
+          .status(500)
+          .json(
+            response.error || 'Some error occurred while updating the user.'
+          );
+      }
+    } catch (err) {
+      res.status(500).json(err);
     }
-  } catch (err) {
-    res.status(500).json(err);
-  }
+  });
 };
 
 const deleteUser = async (req, res) => {
