@@ -36,7 +36,7 @@ const getSingle = async (req, res) => {
 };
 
 const createUser = async (req, res) => {
-  bcrypt.hash(req.body.password, salt, async function (err, hash) {
+  bcrypt.hash(req.body.password, salt, async (err, hash) => {
     try {
       const user = {
         name: req.body.name,
@@ -62,7 +62,7 @@ const createUser = async (req, res) => {
 };
 
 const updateUser = async (req, res) => {
-  bcrypt.hash(req.body.password, salt, async function (err, hash) {
+  bcrypt.hash(req.body.password, salt, async (err, hash) => {
     try {
       const userId = new ObjectId(req.params.id);
       const user = {
