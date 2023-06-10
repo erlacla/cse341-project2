@@ -1,6 +1,7 @@
 const mongodb = require('../db/connect');
 const ObjectId = require('mongodb').ObjectId;
 const bcrypt = require('bcrypt');
+const salt = 10;
 
 const getUsers = async (req, res) => {
   try {
@@ -35,28 +36,29 @@ const getSingle = async (req, res) => {
 };
 
 const createUser = async (req, res) => {
-  try {
-    const user = {
-      name: req.body.name,
-      email: req.body.email,
-      pass: req.body.password,
-      password: await bcrypt.hash(pass, 10),
-    };
-    const response = await mongodb
-      .getDb()
-      .db()
-      .collection('user')
-      .insertOne(user);
-    if (response.acknowledged) {
-      res.status(201).json(response);
-    } else {
-      res
-        .status(500)
-        .json(response.error || 'An error occurred when creating the user.');
+  bcrypt.hash(req.body.password, salt, async function (err, hash) {
+    try {
+      const user = {
+        name: req.body.name,
+        email: req.body.email,
+        password: hash,
+      };
+      const response = await mongodb
+        .getDb()
+        .db()
+        .collection('user')
+        .insertOne(user);
+      if (response.acknowledged) {
+        res.status(201).json(response);
+      } else {
+        res
+          .status(500)
+          .json(response.error || 'An error occurred when creating the user.');
+      }
+    } catch (err) {
+      res.status(500).json(err);
     }
-  } catch (err) {
-    res.status(500).json(err);
-  }
+  });
 };
 
 const updateUser = async (req, res) => {
