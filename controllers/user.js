@@ -38,7 +38,8 @@ const createUser = async (req, res) => {
     const user = {
       name: req.body.name,
       email: req.body.email,
-      password: req.body.password,
+      pass: req.body.password,
+      password: await bcrypt.hash(pass, 10),
     };
     const response = await mongodb
       .getDb()
