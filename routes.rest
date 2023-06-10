@@ -20,7 +20,7 @@ POST http://localhost:8080/user/new HTTP/1.1
 content-type: application/json
 
 {
-  "name": "Johnny",
+  "name": "Johnny Hashed",
   "email": "Testm.com",
   "password": "kjkh"
 }
@@ -59,7 +59,7 @@ POST http://localhost:8080/sites/new HTTP/1.1
 content-type: application/json
 
 {
-  "name": "Test Lodge",
+  "name": "HASHING",
   "location": "Test",
   "website": "Test",
   "price": "Test",
